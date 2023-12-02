@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <title>やるぞ ‼ | 大阪ヘルスバンクニュース掲示板</title>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="apple-touch-icon-precomposed" href="icon.png" sizes="180x180" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <p id="button" onclick="ChangeHidden()">やるぞ <i>‼</i></p>
+  <main id="map"></main>
+  <main id="listing" hidden>
+    <section id="readme"></section>
+    <hr/>
+  </main>
+
+  <script src="geojson.js"></script>
+  <script type="text/javascript">
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGVodSIsImEiOiJja3R4Y3diNmIybTg5Mm9waWgwYTdsc3FyIn0.lVvnPZ3aa6332EaWJIxPaQ';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    center: [135.49373383081854, 34.634214346195165],
+    zoom: 14
+  });
+
+  // add markers to map
+  for (const marker of geojson.features) {
+    // create a HTML element for each feature
+    const el = document.createElement('div');
+    el.className = 'marker';
+
+    // make a marker for each feature and add to the map
+    new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+    el.addEventListener('click', (e) => {
+      map.flyTo({
+        center: marker.geometry.coordinates,
+        zoom: 15
+      })
+    })
+
+    const list = document.querySelector('#listing');
+    const item = document.createElement('div');
+    item.innerHTML = `
+    <p>
+    <date>${marker.properties.description}</date><br/>
+    <b>${marker.properties.title}</b>
+    </p>
+    <img src='${marker.properties.url}' width="100%;">
+    `
+    list.appendChild(item)
+    item.addEventListener('click', (e) => {
+      map.flyTo({
+        center: marker.geometry.coordinates,
+        bearing: 0,
+        pitch: 60,
+        zoom: 20
+      })
+    })
+  }
+
+  fetch('README.md')
+  .then(response => response.text())
+  .then(innerText => {
+    document.querySelector('#readme').innerText = innerText;
+  });
+
+  function ChangeHidden() {
+    const mainAll = document.querySelectorAll('main');
+    mainAll.forEach(main => {
+      if (main.hidden == false) {
+        main.hidden = true;
+      } else {
+        main.hidden = false;
+      }
+    });
+  };
+  </script>
+</body>
+</html>
