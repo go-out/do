@@ -12,7 +12,8 @@ const geojson = {
         description: '2021年12月5日 11:07',
         url: 'https://64.media.tumblr.com/77f43ecf1dfd0947ff85bd9e5ee5cc48/93892f9d68228bb7-74/s2048x3072/1d7e363ae19de8b0efafdc17e1b86dcd95309deb.jpg'
       }
-    }, {
+    },
+    {
       type: 'Feature',
       geometry: {
         type: 'Point',
@@ -180,6 +181,5 @@ const geojson = {
         url: 'https://64.media.tumblr.com/4dccc0c3378bbf9ffddabc828bd2cfa1/5897311e4d7d4fd8-fa/s2048x3072/6cc96c6ed03afb631302801807b918ce5b96580c.jpg'
       }
     }
-
   ]
 };

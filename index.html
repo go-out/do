@@ -1,90 +1,118 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
+
+  <!--og:meta-->
+  <meta content="website" property="og:type">
   <title>やるぞ ‼ | 大阪ヘルスバンクニュース掲示板</title>
+  <meta content="やるぞ ‼ | 大阪ヘルスバンクニュース掲示板" property="og:title">
+  <meta content="知っていることの 外へ わからないところまで 出かける" name="description">
+  <meta content="知っていることの 外へ わからないところまで 出かける" name="og:description">
+
+  <!--for Twitter-->
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="https://go-out.github.io/do/" property="og:url">
+  <meta content="https://go-out.github.io/do/img/card.png" property="og:image">
+  <meta content="https://go-out.github.io/do/img/card.png" name="twitter:image:src">
+
+  <!-- Favicons and friends -->
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="msapplication-config" content="">
+  <meta name="theme-color" content="#fff">
+  <link href="icon.png" rel="icon" type="image/png">
+  <link href="icon.png" rel="apple-touch-icon">
+  <link rel="manifest" href="">
+  <link rel="mask-icon" href="" color="#fff">
+  <link rel="shortcut icon" href="icon.png">
+
+  <!-- Show app banner on iOS -->
+  <meta name="apple-itunes-app" content="">
+
+  <!-- Mapbox -->
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
-  <link href="style.css" rel="stylesheet" />
-  <link rel="icon" href="icon.png" type="image/png">
-  <link rel="apple-touch-icon-precomposed" href="icon.png" sizes="180x180" type="image/png">
+
+  <link href="log/index.css" rel="stylesheet" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <p id="button" onclick="ChangeHidden()">やるぞ <i>‼</i></p>
+  <h1 id="button" onclick="changeHidden()">やるぞ <i>‼</i></h1>
+
   <main id="map"></main>
   <main id="listing" hidden>
     <section id="readme"></section>
-    <hr/>
+    <ul></ul>
   </main>
 
-  <script src="geojson.js"></script>
+  <script src="log/index.js"></script>
   <script type="text/javascript">
-  mapboxgl.accessToken = 'pk.eyJ1IjoicGVodSIsImEiOiJja3R4Y3diNmIybTg5Mm9waWgwYTdsc3FyIn0.lVvnPZ3aa6332EaWJIxPaQ';
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    center: [135.49373383081854, 34.634214346195165],
-    zoom: 14
-  });
-
-  // add markers to map
-  for (const marker of geojson.features) {
-    // create a HTML element for each feature
-    const el = document.createElement('div');
-    el.className = 'marker';
-
-    // make a marker for each feature and add to the map
-    new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .addTo(map);
-    el.addEventListener('click', (e) => {
-      map.flyTo({
-        center: marker.geometry.coordinates,
-        zoom: 15
-      })
-    })
-
-    const list = document.querySelector('#listing');
-    const item = document.createElement('div');
-    item.innerHTML = `
-    <p>
-    <date>${marker.properties.description}</date><br/>
-    <b>${marker.properties.title}</b>
-    </p>
-    <img src='${marker.properties.url}' width="100%;">
-    `
-    list.appendChild(item)
-    item.addEventListener('click', (e) => {
-      map.flyTo({
-        center: marker.geometry.coordinates,
-        bearing: 0,
-        pitch: 60,
-        zoom: 20
-      })
-    })
-  }
-
-  fetch('README.md')
-  .then(response => response.text())
-  .then(innerText => {
-    document.querySelector('#readme').innerText = innerText;
-  });
-
-  function ChangeHidden() {
-    const mainAll = document.querySelectorAll('main');
-    mainAll.forEach(main => {
-      if (main.hidden == false) {
-        main.hidden = true;
-      } else {
-        main.hidden = false;
-      }
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGVodSIsImEiOiJja3R4Y3diNmIybTg5Mm9waWgwYTdsc3FyIn0.lVvnPZ3aa6332EaWJIxPaQ';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
+      center: [135.49373383081854, 34.634214346195165],
+      zoom: 14
     });
-  };
+
+    map.on('load', () => {
+      for (const marker of geojson.features) {
+        // create a HTML element for each feature
+        const el = document.createElement('div');
+        el.className = 'do';
+
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+        el.addEventListener('click', (e) => {
+          map.flyTo({
+            center: marker.geometry.coordinates,
+            zoom: 17.5
+          })
+        })
+
+        const list = document.querySelector('#listing ul');
+        const item = document.createElement('li');
+        item.innerHTML = `
+        <time>${marker.properties.description}</time><br/>
+        <b>${marker.properties.title}</b>
+        <img src="${marker.properties.url}" alt="${marker.properties.title}" width="100%">
+        `
+        list.appendChild(item)
+        item.addEventListener('click', () => {
+          map.flyTo({
+            center: marker.geometry.coordinates,
+            bearing: 0,
+            pitch: 60,
+            zoom: 20
+          })
+        })
+      };
+    });
+
+    fetch('README.md')
+      .then(response => response.text())
+      .then(innerText => {
+        document.querySelector('#readme').innerText = innerText;
+      });
+
+    function changeHidden() {
+      const listing = document.querySelector('#listing');
+      if (listing.hidden == false) {
+        listing.hidden = true;
+      } else {
+        listing.hidden = false;
+      }
+    };
   </script>
 </body>
+
 </html>
