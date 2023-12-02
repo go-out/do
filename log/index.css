@@ -20,7 +20,8 @@ body {
 
 body,
 .mapboxgl-marker,
-.mapboxgl-popup-content {
+.mapboxgl-popup-content,
+.mapboxgl-ctrl-attrib-inner {
   font-family: 'Mochiy Pop One', sans-serif;
 }
 
