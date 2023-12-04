@@ -55,11 +55,18 @@
   <script src="log/index.js"></script>
   <script type="text/javascript">
     mapboxgl.accessToken = 'pk.eyJ1IjoicGVodSIsImEiOiJja3R4Y3diNmIybTg5Mm9waWgwYTdsc3FyIn0.lVvnPZ3aa6332EaWJIxPaQ';
+    
+    const bounds = [
+      [135.46054244264906, 34.61539235057275], // 南西座標
+      [135.5141077481369, 34.65361764632249] // 北東座標
+    ];
+    
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [135.49373383081854, 34.634214346195165],
-      zoom: 14
+      zoom: 14,
+      maxBounds: bounds
     });
 
     map.on('load', () => {
