@@ -1,4 +1,4 @@
-const geojson = {
+const jsonAll = {
   type: 'FeatureCollection',
   features: [
     {
