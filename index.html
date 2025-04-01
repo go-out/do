@@ -5,73 +5,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
-  <link href="./icon.png" rel="icon" type="image/png">
-  <link href="./icon.png" rel="apple-touch-icon">
-  <link rel="manifest" href="">
+  <link href="./img/000.png" rel="icon" type="image/png">
+  <link href="./img/000.png" rel="apple-touch-icon">
+  <link rel="manifest" href="./webapp.json">
 
   <!--og:meta-->
   <meta content="website" property="og:type">
-  <title>やるぞ ‼ | 大阪ヘルスバンクニュース掲示板</title>
-  <meta content="やるぞ ‼ | 大阪ヘルスバンクニュース掲示板" property="og:title">
-  <meta content="知っていることの 外へ わからないところまで 出かける" name="description">
-  <meta content="知っていることの 外へ わからないところまで 出かける" name="og:description">
+  <title>やるぞ ‼</title>
+  <meta content="やるぞ ‼" property="og:title">
+  <meta content="大阪ヘルスバンクニュース掲示板" name="description">
+  <meta content="大阪ヘルスバンクニュース掲示板" name="og:description">
 
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
   <meta content="https://go-out.github.io/do/" property="og:url">
-  <meta
-    content="https://64.media.tumblr.com/77f43ecf1dfd0947ff85bd9e5ee5cc48/93892f9d68228bb7-74/s2048x3072/1d7e363ae19de8b0efafdc17e1b86dcd95309deb.jpg"
-    property="og:image">
-  <meta
-    content="https://64.media.tumblr.com/77f43ecf1dfd0947ff85bd9e5ee5cc48/93892f9d68228bb7-74/s2048x3072/1d7e363ae19de8b0efafdc17e1b86dcd95309deb.jpg"
-    name="twitter:image:src">
+  <meta content="./img/001.jpg" property="og:image">
+  <meta content="./img/001.jpg" name="twitter:image:src">
 
   <!-- Mapbox -->
-  <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
-  <link href="./style.css" rel="stylesheet" />
+  <link href="./index.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1 onclick="viewList()">やるぞ <i>‼</i></h1>
+  <h1 onclick="toggleSidebar('listing')">
+    <b>やるぞ</b>
+    <i>‼</i>
+  </h1>
 
-  <main>
-    <div id="map"></div>
-    <article id="listing" hidden>
-      <section id="readme"></section>
+  <div id="map">
+    <article id="listing" class="collapsed">
       <ul></ul>
+      <hr>
+      <section id="readme"></section>
     </article>
-  </main>
-  <nav>
-    <fieldset id="styles">
-      <legend>Mapbox Styles API <code id="url">スタイルURL</code></legend>
-    </fieldset>
-    <script src="./mapbox/style.js"></script>
-  </nav>
+  </div>
 
-  <script src="./index.js"></script>
-  <script src="./mapbox/script.js"></script>
+  <script src="./mapbox.js"></script>
+  <script src="./collection.js"></script>
   <script type="text/javascript">
     fetch('README.md')
       .then(response => response.text())
       .then(innerText => {
         document.querySelector('#readme').innerText = innerText;
       });
-
-    function viewList() {
-      const mapbox = document.querySelector('#map');
-      const listing = document.querySelector('#listing');
-      let type = screen.orientation.type;
-      if (listing.hidden == false) {
-        listing.hidden = true;
-      } else {
-        listing.hidden = false;
-      };
-    };
   </script>
 </body>
 

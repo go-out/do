@@ -1,0 +1,305 @@
+{
+    "type": "FeatureCollection",
+    "title": "やるぞ ‼",
+    "description": "大阪ヘルスバンクニュース掲示板",
+    "author": {
+        "name": "∧°┐"
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.4875474720384,
+                    34.63374890837616
+                ],
+                "google": "https://maps.app.goo.gl/LB6doNxZetBYqbgK8"
+            },
+            "properties": {
+                "title": "西成区千本中２丁目３ー１",
+                "description": "2021年12月5日 11:07",
+                "img": [
+                    "001.jpg",
+                    "002.jpg",
+                    "003.png"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.50391050613052,
+                    34.64546789712162
+                ],
+                "google": "https://maps.app.goo.gl/a7UysWayQV7jEfpy9"
+            },
+            "properties": {
+                "title": "西成区太子２丁目３−１０",
+                "description": "2022年2月26日 13:44",
+                "img": [
+                    "004.jpg",
+                    "005.jpg",
+                    "006.jpg",
+                    "007.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48641471397286,
+                    34.63357632592684
+                ],
+                "google": "https://maps.app.goo.gl/iL4robfdqzeAyLZW6"
+            },
+            "properties": {
+                "title": "西成区千本中２丁目３−２０",
+                "description": "2022年5月2日 15:10",
+                "img": [
+                    "008.jpg",
+                    "009.jpg",
+                    "010.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48766121074425,
+                    34.63457791958582
+                ],
+                "google": "https://maps.app.goo.gl/wieffCY7mZnSuBDi6"
+            },
+            "properties": {
+                "title": "西成区千本北２丁目２９−１８",
+                "description": "2022年5月2日 15:20",
+                "img": [
+                    "011.jpg",
+                    "012.jpg",
+                    "013.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48680727044314,
+                    34.635939323277086
+                ],
+                "google": "https://maps.app.goo.gl/ykD4uD4fBTfEc6BN7"
+            },
+            "properties": {
+                "title": "西成区千本北２丁目２０−２３",
+                "description": "2022年5月2日 15:22",
+                "img": [
+                    "014.jpg",
+                    "015.jpg",
+                    "016.jpg",
+                    "017.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.488939135542,
+                    34.635929166387655
+                ],
+                "google": "https://maps.app.goo.gl/jvu6kvRDGiwcZxZt7"
+            },
+            "properties": {
+                "title": "西成区千本北２丁目１８−２６",
+                "description": "2022年5月2日 15:28",
+                "img": [
+                    "018.jpg",
+                    "019.jpg",
+                    "020.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.4890337713029,
+                    34.63586664663737
+                ],
+                "google": "https://maps.app.goo.gl/xFGMyLJVcLTeVMjV8"
+            },
+            "properties": {
+                "title": "西成区千本北１丁目１１−３６",
+                "description": "2022年5月2日 15:30",
+                "img": [
+                    "021.jpg",
+                    "022.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48742963955186,
+                    34.638752909055384
+                ],
+                "google": "https://maps.app.goo.gl/u7P1eq84kXGmm6zT8"
+            },
+            "properties": {
+                "title": "西成区橘３丁目１７−６",
+                "description": "2022年5月2日 15:40",
+                "img": [
+                    "023.jpg",
+                    "024.jpg",
+                    "025.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48717317682286,
+                    34.63879986177503
+                ],
+                "google": "https://maps.app.goo.gl/zcj7KkP51nJjrwxv7"
+            },
+            "properties": {
+                "title": "西成区橘３丁目１７−７",
+                "description": "2022年5月2日 15:41",
+                "img": [
+                    "026.jpg",
+                    "027.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.48776750786493,
+                    34.63920320769225
+                ],
+                "google": "https://maps.app.goo.gl/aaBrU1FJr8ssDKrh9"
+            },
+            "properties": {
+                "title": "西成区橘３丁目１０−１７",
+                "description": "2022年5月2日 15:45",
+                "img": [
+                    "028.jpg",
+                    "029.jpg",
+                    "030.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.49303368254732,
+                    34.64092310084271
+                ],
+                "google": "https://maps.app.goo.gl/wvTjH2kAuaz6zUEa9"
+            },
+            "properties": {
+                "title": "西成区松１丁目１０−３０",
+                "description": "2022年5月2日 16:04",
+                "img": [
+                    "031.jpg",
+                    "032.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.49745783743867,
+                    34.64085942695837
+                ],
+                "google": "https://maps.app.goo.gl/LwnN1bmJ9aFNVF9b8"
+            },
+            "properties": {
+                "title": "西成区花園南１丁目１１−１",
+                "description": "2022年5月2日 16:07",
+                "img": [
+                    "033.jpg",
+                    "034.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.49882913537078,
+                    34.635158017385336
+                ],
+                "google": "https://maps.app.goo.gl/xL7TCXCHuynEkMFe9"
+            },
+            "properties": {
+                "title": "西成区天下茶屋３丁目９−２１",
+                "description": "2022年5月2日 16:40",
+                "img": [
+                    "035.jpg",
+                    "036.jpg",
+                    "037.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.4960245179385,
+                    34.627339317979306
+                ],
+                "google": "https://maps.app.goo.gl/Lg5BwrUxUegTC5XC8"
+            },
+            "properties": {
+                "title": "西成区玉出東１丁目６−１０",
+                "description": "2022年5月2日 16:50",
+                "img": [
+                    "038.jpg",
+                    "039.jpg"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.4953517829611,
+                    34.62702765533572
+                ],
+                "google": "https://maps.app.goo.gl/PSmW5JNBhaZk63NL7"
+            },
+            "properties": {
+                "title": "西成区玉出東１丁目９−４",
+                "description": "2022年6月30日 19:55",
+                "img": [
+                    "040.jpg"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "short_name": "やるぞ ‼",
+    "name": "やるぞ ‼",
+    "icons": [
+        {
+            "src": "/img/000.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        }
+    ],
+    "display": "standalone",
+    "theme_color": "#B1302B",
+    "background_color": "#166BB6"
+}

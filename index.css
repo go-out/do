@@ -1,0 +1,125 @@
+html {
+    font-size: 16px;
+    height: -webkit-fill-available;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1 {
+    color: #B1302B;
+    background: #166BB6;
+}
+
+h1 {
+    border: 0.2rem #ddd solid;
+}
+
+h1 {
+    font-size: 111%;
+    writing-mode: vertical-rl;
+}
+
+#readme {
+    font-size: 111%;
+}
+
+h1,
+#listing {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+h1 b {
+    letter-spacing: 0.2rem;
+}
+
+h1 i {
+    display: inline-block;
+    margin-top: -0.25rem;
+    transform: scale(1, 0.75) skew(-15deg, 0deg);
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+h1,
+#listing,
+#readme {
+    padding: 0.5rem;
+}
+
+#listing ul li {
+    padding: 0 0.5rem;
+}
+
+h1 {
+    margin: 0.25rem;
+}
+
+#readme {
+    min-height: calc(100dvh - 3.5rem);
+    margin: 1rem 0 1.5rem;
+}
+
+h1,
+#map,
+#listing {
+    position: absolute;
+}
+
+#map {
+    top: 0;
+    bottom: 0;
+}
+
+h1 {
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+#map,
+#listing ul li img {
+    width: 100%;
+}
+
+#listing {
+    background: rgba(22, 107, 182, 0.9);
+    left: 0;
+    z-index: 1;
+    width: 550px;
+    max-width: calc(100% - 4.5rem);
+    height: 100%;
+    transition: transform 1s;
+    overflow: auto;
+}
+
+#listing.collapsed {
+    width: 0;
+    transform: translateX(-550px);
+}
+
+#listing ul {
+    list-style: none inside;
+}
+
+#listing ul li img {
+    transition: filter 1s;
+    filter: grayscale(1);
+}
+
+#listing ul li.active img {
+    filter: grayscale(0);
+}
+
+hr {
+    border: none;
+    border-bottom: dotted 0.2rem #B1302B;
+}
